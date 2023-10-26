@@ -5,4 +5,4 @@ RUN mvn clean package -DskipTests
 FROM openjdk:17.0.1-jdk-slim
 COPY --from=build /target/jobseeking-0.0.1-SNAPSHOT.war jobseeking.war
 EXPOSE 8080
-ENTRYPOINT ["java", "-war", "jobseeking.war"]
+ENTRYPOINT ["java", "-jar", "jobseeking.war"]
