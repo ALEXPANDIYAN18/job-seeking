@@ -6,4 +6,4 @@ FROM openjdk:17.0.1-jdk-slim
 COPY --from=build /target/jobseeking-0.0.1-SNAPSHOT.war jobseeking.war
 
 ENTRYPOINT ["java", "-jar", "jobseeking.war"]
-CMD uvicorn webservice:app --host 0.0.0.0 --port $PORT
+CMD uvicorn webservice:app --host 0.0.0.0 --port ${PORT-8080}
